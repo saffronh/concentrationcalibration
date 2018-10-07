@@ -1,9 +1,8 @@
 ## Welcome to our website Concentration Calibration! 
 
-Here you will embark on a journey to discover potential areas of study based on what classes spark your interest. Please register if you haven't created an account ebfore.
+Here you will set out on a journey to discover potential areas of study based on what classes spark your interest.
 
-
-If you have never used our website before, you should begin by taking the test prompted by the blue `Take Test` button on the welcome page. The 15-question test will ask you to select the class you find most interesting from a list of four Harvard classes for each question.
+If you have never used our website before, you should begin by registering and taking the test prompted by the blue `Take Test` button on the welcome page. The 15-question test will ask you to select the class you find most interesting from a list of four Harvard classes for each question.
 
 
 On the result page, you will see a frequency breakdown by department with a pie chart. The pie chart will display the percentages of your concentration interests from the test. This'll give you some potential concentrations to mull over. We’ll also tell you the name of the department whose courses you’ve picked the most often.
