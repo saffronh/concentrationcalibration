@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Test
+{% endblock %}
+
+{% block main %}
+    <h2>Which class interests you the most?</h2>
+    <form action="/test" method="post">
+        <div class="form-group">
+            {% for course in selectedcourses %}
+              <input type="radio" name="favourite" value="{{ course.id }}" required> {{ course.title }}<br>
+            {% endfor %}
+            <input type="radio" name="favourite" value="NULL" required> I absolutely despise all of these options! <br>
+        </div>
+        <button class="btn btn-info" type="submit">Proceed!</button>
+    </form>
+{% endblock %}

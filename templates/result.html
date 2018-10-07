@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Result
+{% endblock %}
+
+{% block main %}
+<html>
+  <head>
+    <meta id="suggestions" data-piechart="{{ suggestions }}">
+    <!-- Source: Google Pie Chart API https://developers.google.com/chart/interactive/docs/gallery/piechart -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var chartdata = $('#suggestions').data("piechart");
+        var piedata = [['Concentration', 'Selections']];
+        for (var key in chartdata) {
+          piedata.push([key, chartdata[key]])
+        }
+        var data = google.visualization.arrayToDataTable(piedata);
+
+        var options = {
+          title: 'Your Suggested Areas of Study'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+    {% if '<' in concentration %}
+    <h3>Remember to take our test first!</h3>
+    {% else %}
+    <h3>Go over to our "History" page and check out the highlighted courses in <u>{{ concentration }}</u>, your most desired concentration!</h3><br>
+    {% endif %}
+  </body>
+</html>
+
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Course Selection History
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped" style="width:100%">
+    <tr>
+        <th><b>Courses You Have Selected</b></th>
+        <th><b>Description</b></th>
+        <th><b>Department</b></th>
+        <th><b>Star to Save</b></th>
+    </tr>
+    {% for course in history %}
+    <tr>
+        {% if course.department_id in dept_id[0].values() %}
+        <td><mark>{{ course.title }}</mark></td>
+        <td><mark>{{ course.description }}</mark></td>
+        <td><mark>{{ course.short_name }}</mark></td>
+        {% else %}
+        <td>{{ course.title }}</td>
+        <td>{{ course.description }}</td>
+        <td>{{ course.short_name }}</td>
+        {% endif %}
+        <td style="width:120px">
+            <form action="/star" method="post">
+                <div class="input-group">
+                    <input type="hidden" name="starredcourse" value="{{ course.id }}"/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="submit" id="status" class="button"><span>
+                            {% if course.starred == 1 %}
+                            Unstar
+                            {% else %}
+                            Star
+                            {% endif %}</span></button>
+                    </span>
+                </div>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</p>
+
+{% endblock %}
+

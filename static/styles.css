@@ -1,0 +1,47 @@
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+}
+
+/* colors for brand */
+nav .navbar-brand .blue
+{
+    color: #191970;
+}
+nav .navbar-brand .purple
+{
+    color: #663399;
+}
+nav .navbar-brand .red
+{
+    color: #DC143C;
+}
+nav .navbar-brand .salmon
+{
+    color: #E9967A;
+}
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}

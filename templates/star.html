@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Starred Courses
+{% endblock %}
+
+{% block main %}
+<table class="table table-striped" style="width:100%">
+    <tr>
+        <th><b>Starred Courses</b></th>
+        <th><b>Description</b></th>
+        <th><b>Department</b></th>
+        <th><b>Unstar</b></th>
+    </tr>
+    {% for course in starredcourses %}
+    <tr>
+        <td>{{ course.title }}</td>
+        <td>{{ course.description }}</td>
+        <td>{{ course.short_name }}</td>
+        <td style="width:120px">
+            <form action="/star" method="post">
+                <div class="input-group">
+                    <input type="hidden" name="starredcourse" value="{{ course.id }}"/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="submit" id="status" class="button"><span>Unstar</span></button>
+                    </span>
+                </div>
+            </form>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+</p>
+
+{% endblock %}
+
