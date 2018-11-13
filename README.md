@@ -1,4 +1,4 @@
-## Welcome to our website Concentration Calibration! 
+## Welcome to Concentration Calibration! 
 
 Here you will set out on a journey to discover potential areas of study based on what classes spark your interest.
 
